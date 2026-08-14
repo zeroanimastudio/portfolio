@@ -144,6 +144,8 @@ function renderCaseStudy(slug) {
       ${cs.disclaimer ? `<p>${escapeHtml(cs.disclaimer)}</p>` : ""}
       <p>${escapeHtml(cs.rights)}</p>
     </div>
+
+    <button type="button" class="cs-scroll-top" data-scroll-top aria-label="Back to top">&uarr;</button>
   `;
 }
 
@@ -257,6 +259,7 @@ function router() {
   }
 
   contentEl.scrollTop = 0;
+  window.scrollTo(0, 0);
 }
 
 window.addEventListener("hashchange", router);
@@ -341,6 +344,11 @@ function closeLightbox() {
 contentEl.addEventListener("click", (e) => {
   const img = e.target.closest(".cs-shot img");
   if (img) openLightbox(img.currentSrc || img.src, img.alt);
+
+  if (e.target.closest("[data-scroll-top]")) {
+    contentEl.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 });
 
 // Dragging (while zoomed) pans the image via scrollLeft/scrollTop; a plain

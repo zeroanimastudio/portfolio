@@ -297,6 +297,7 @@ nav.main-nav a.active {
 
 .bio-title {
   font-size: 18px;
+  font-weight: 800;
   margin: 0 0 16px 0;
 }
 
@@ -568,6 +569,21 @@ body[data-view="reading"] .content {
 .cs-disclaimer p { margin: 0 0 6px 0; }
 .cs-disclaimer p:last-child { margin-bottom: 0; opacity: 0.7; }
 
+.cs-scroll-top {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 32px auto 0 auto;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
 /* --- Resume --- */
 
 .resume-header {
@@ -836,6 +852,33 @@ body[data-view="reading"] .content {
     font-size: 12px;
     font-weight: 700;
   }
+
+  /* Portfolio list: number + arrow on their own line, title/blurb below —
+     avoids a tall row forced by a big centered number next to wrapped text. */
+  .case-card {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "num arrow"
+      "meta meta";
+    gap: 4px 16px;
+    padding: 20px 8px;
+  }
+  .case-card .num { grid-area: num; font-size: 20px; }
+  .case-card .arrow { grid-area: arrow; }
+  .case-card .meta { grid-area: meta; }
+
+  /* Contact email shouldn't force horizontal scroll on narrow screens. */
+  .contact-view a.contact-link {
+    font-size: 16px;
+  }
+
+  .cs-scroll-top {
+    display: flex;
+  }
+}
+
+.contact-view a.contact-link {
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 860px) and (hover: hover) and (pointer: fine) {
