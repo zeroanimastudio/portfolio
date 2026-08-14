@@ -43,6 +43,23 @@ body {
 
 a { color: inherit; }
 
+/* Replace the browser's default focus/tap ring (often an odd grey box) with
+   one that fits the design, shown only for real keyboard focus. */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus,
+button:focus {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
 .frame {
   margin: 24px;
   height: calc(100vh - 48px);
@@ -73,6 +90,11 @@ a { color: inherit; }
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 .sidebar-toggle,
