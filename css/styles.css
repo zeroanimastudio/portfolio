@@ -96,10 +96,12 @@ a { color: inherit; }
   flex-shrink: 0;
 }
 
-.sidebar-toggle:hover,
-.bio-toggle:hover {
-  background: var(--yellow-solid);
-  color: var(--ink);
+@media (hover: hover) and (pointer: fine) {
+  .sidebar-toggle:hover,
+  .bio-toggle:hover {
+    background: var(--yellow-solid);
+    color: var(--ink);
+  }
 }
 
 .sidebar-toggle-icon,
@@ -133,10 +135,16 @@ a { color: inherit; }
   flex-shrink: 0;
 }
 
-.home-button:hover,
 .home-button.active {
   background: var(--yellow-solid);
   color: var(--ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-button:hover {
+    background: var(--yellow-solid);
+    color: var(--ink);
+  }
 }
 
 .sidebar-content {
@@ -235,7 +243,6 @@ nav.main-nav a {
   display: inline-block;
 }
 
-nav.main-nav a:hover,
 nav.main-nav a.active {
   font-family: var(--font-mono);
   font-weight: 800;
@@ -246,6 +253,20 @@ nav.main-nav a.active {
   background: var(--paper);
   padding: 3px 8px;
   border: 2px solid var(--ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  nav.main-nav a:hover {
+    font-family: var(--font-mono);
+    font-weight: 800;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--ink);
+    background: var(--paper);
+    padding: 3px 8px;
+    border: 2px solid var(--ink);
+  }
 }
 
 .bio-box {
@@ -292,8 +313,10 @@ nav.main-nav a.active {
   text-decoration: underline;
 }
 
-.bio-cta:hover {
-  color: #7a2b00;
+@media (hover: hover) and (pointer: fine) {
+  .bio-cta:hover {
+    color: #7a2b00;
+  }
 }
 
 .bio-footer {
@@ -342,8 +365,10 @@ body[data-view="reading"] .content {
   border-bottom: 2px solid transparent;
 }
 
-.breadcrumbs a:hover {
-  border-bottom-color: var(--ink);
+@media (hover: hover) and (pointer: fine) {
+  .breadcrumbs a:hover {
+    border-bottom-color: var(--ink);
+  }
 }
 
 .breadcrumbs .sep { opacity: 0.5; }
@@ -440,9 +465,11 @@ body[data-view="reading"] .content {
   outline-offset: -2px;
 }
 
-.case-card:hover {
-  background: var(--paper);
-  outline-color: var(--ink);
+@media (hover: hover) and (pointer: fine) {
+  .case-card:hover {
+    background: var(--paper);
+    outline-color: var(--ink);
+  }
 }
 
 .case-card .num {
@@ -575,9 +602,11 @@ body[data-view="reading"] .content {
   white-space: nowrap;
 }
 
-.resume-download:hover {
-  background: var(--ink);
-  color: var(--paper);
+@media (hover: hover) and (pointer: fine) {
+  .resume-download:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
 }
 
 .resume-pending {
@@ -652,9 +681,11 @@ body[data-view="reading"] .content {
   width: fit-content;
 }
 
-.contact-view a.contact-link:hover {
-  background: var(--paper);
-  border-color: var(--ink);
+@media (hover: hover) and (pointer: fine) {
+  .contact-view a.contact-link:hover {
+    background: var(--paper);
+    border-color: var(--ink);
+  }
 }
 
 /* --- Lightbox --- */
@@ -724,9 +755,11 @@ body[data-view="reading"] .content {
   cursor: pointer;
 }
 
-.lightbox-close:hover {
-  background: var(--paper);
-  color: var(--ink);
+@media (hover: hover) and (pointer: fine) {
+  .lightbox-close:hover {
+    background: var(--paper);
+    color: var(--ink);
+  }
 }
 
 @media (max-width: 860px) {
@@ -768,7 +801,6 @@ body[data-view="reading"] .content {
   nav.main-nav a {
     font-size: 22px;
   }
-  nav.main-nav a:hover,
   nav.main-nav a.active {
     font-size: 13px;
   }
@@ -803,5 +835,11 @@ body[data-view="reading"] .content {
     padding: 24px 40px 40px 40px;
     font-size: 12px;
     font-weight: 700;
+  }
+}
+
+@media (max-width: 860px) and (hover: hover) and (pointer: fine) {
+  nav.main-nav a:hover {
+    font-size: 13px;
   }
 }
