@@ -805,15 +805,20 @@ body[data-view="reading"] .content {
     grid-template-columns: 1fr;
     grid-template-rows: none;
     height: auto;
-    min-height: calc(100vh - 48px);
+    min-height: calc(100vh - 24px);
+    margin: 12px;
   }
   .sidebar {
     height: auto;
     min-height: 0;
     overflow: visible;
+    padding: 20px;
   }
   .divider { display: none; }
-  .content { max-height: none; }
+  .content {
+    max-height: none;
+    padding: 24px 20px;
+  }
   .sidebar-toggle { display: none; }
   .frame.sidebar-collapsed .sidebar-content { display: flex; }
 
@@ -822,7 +827,7 @@ body[data-view="reading"] .content {
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 14px;
   }
   .photo-box {
     display: none;
@@ -846,12 +851,12 @@ body[data-view="reading"] .content {
   /* Bio box is secondary info now — collapsed behind a toggle. */
   .bio-toggle {
     display: flex;
-    margin-top: 20px;
+    margin-top: 14px;
   }
   .bio-box {
     display: none;
     width: 100%;
-    margin-top: 12px;
+    margin-top: 10px;
   }
   .bio-box.is-open {
     display: block;
@@ -870,7 +875,7 @@ body[data-view="reading"] .content {
   .sidebar .copyright { display: none; }
   .copyright-mobile {
     display: block;
-    padding: 24px 40px 40px 40px;
+    padding: 16px 20px 28px 20px;
     font-size: 12px;
     font-weight: 700;
   }
@@ -883,7 +888,7 @@ body[data-view="reading"] .content {
       "num arrow"
       "meta meta";
     gap: 4px 16px;
-    padding: 20px 8px;
+    padding: 16px 8px;
   }
   .case-card .num { grid-area: num; font-size: 20px; }
   .case-card .arrow { grid-area: arrow; }
@@ -896,7 +901,24 @@ body[data-view="reading"] .content {
 
   .cs-scroll-top {
     display: flex;
+    margin-top: 20px;
   }
+
+  /* Tighter rhythm for long-form pages (case studies, resume) — the desktop
+     spacing is generous enough to make these feel excessively long on mobile. */
+  .breadcrumbs { margin-bottom: 20px; }
+  .cs-title { margin-bottom: 16px; }
+  .cs-section { margin-bottom: 20px; }
+  .cs-gallery-heading { margin: 24px 0 12px 0; }
+  .cs-shot { margin-bottom: 8px; }
+  .cs-disclaimer { margin-top: 24px; padding: 12px 16px; }
+
+  .resume-subtitle { margin-bottom: 6px; }
+  .resume-contact-line { margin-bottom: 24px; }
+  .resume-body h3 { margin: 28px 0 10px 0; }
+  .resume-job { margin-bottom: 20px; }
+  .resume-job-head { margin-bottom: 6px; }
+  .resume-body ul { margin-bottom: 12px; }
 }
 
 .contact-view a.contact-link {
